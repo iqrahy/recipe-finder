@@ -6,8 +6,6 @@
     --border-color: #ccc;
     --header-hight: 70px;
     --search-hight: 60px;
-
-
 }
 
 * {
@@ -21,8 +19,16 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: var(--light-color);
+    overflow: hidden;
+    overflow-y: auto;
 }
 
+.top-fix{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
 header {
     height: var(--header-hight);
     background-color: #6ca3aa;
@@ -49,6 +55,7 @@ header h2 {
     justify-content: center;
     align-items: center;
     height: var(--search-hight);
+    background-color: var(--light-color);
     gap: 10px;
     box-shadow: 0px 2px 8px 0px var(--border-color);
 }
@@ -91,12 +98,17 @@ header h2 {
 .container {
     text-align: center;
     height: calc(100vh - var(--header-hight)+var(--search-hight));
+    margin-top: 10%;
 }
 
 #recipe-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: wrap;
+    min-height: calc(100vh - var(--header-hight) - var(--search-hight));
+    overflow-y: auto;
+    padding-top: 20px;
 }
 
 .recipe {
@@ -106,7 +118,7 @@ header h2 {
     box-shadow: 0px 0px 8px 2px var(--border-color);
     margin: 25px;
     transition: all 200ms ease-in-out;
-
+    border-radius: 5px ;
 }
 
 .recipe-title {
@@ -137,6 +149,7 @@ header h2 {
     background-color: #ccc;
     transform: scale(.8);
     transform-origin: top left;
+    font-size: 13px;
 }
 
 .recipe-text ul {
@@ -146,7 +159,7 @@ header h2 {
     padding: 5px;
 }
 .recipe-text ul li{
-    padding: 4px;
+    padding: 5px;
 }
 .recipe:hover .recipe-text{
     height: 120px;
@@ -157,4 +170,21 @@ header h2 {
 }
 .recipe:hover{
     height: 430px;
+}
+
+::selection{
+    color: var(--light-color);
+    background-color: #6ca3aa;
+}
+
+::-webkit-scrollbar{
+    width: 11px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #817171;
 }

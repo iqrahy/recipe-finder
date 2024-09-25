@@ -10,35 +10,22 @@
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 <body>
+    <div class="top-fix">
         <header>
             <h2>Recipe Finder</h2>
             <iconify-icon class="icon" icon="teenyicons:search-outline"></iconify-icon>
         </header>
+        <div class="search">
+            <input id="textSearch" type="text" placeholder="Search Recipe" autofocus>
+            <button class="btn">Find</button>
+        </div>
+    </div>
+        
 
         <section class="container">
-            <div class="search">
-                <input type="text" placeholder="Search Recipe" autofocus>
-                <button class="btn">Find</button>
-            </div>
-        
     
-        <div id="recipe-container">
-            <div class="recipe">
-                <div class="recipe-title">Recipe Title</div>
-                <div class="recipe-image">
-                    <img src="image" alt="Recipe">
-                </div>
-                <div class="recipe-text">
-                    <ul>
-                        <li>step 1</li>
-                        <li>step 2</li>
-                        <li>step 3</li>
-                        <li>step 4</li>
-                        <li>step 5</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div id="recipe-container"></div>
+        
         </section>
       
     
